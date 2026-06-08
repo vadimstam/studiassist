@@ -5,7 +5,8 @@ from services.ai_service import ai_error_to_http_exception, call_ai_full
 
 from json import loads
 
-from backend import document_store
+from db.database import document_store
+
 
 
 router = APIRouter(

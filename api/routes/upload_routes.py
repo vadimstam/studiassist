@@ -5,7 +5,7 @@ from fastapi import UploadFile, HTTPException, File, APIRouter
 
 from utils.document_utils import extract_text_from_pdf, chunk_text, extract_text_from_pptx
 from services.rag_service import simple_embed
-from backend import document_store
+from db.database import document_store
 
 
 

@@ -1,7 +1,8 @@
 from fastapi import HTTPException, APIRouter
 
 
-from backend import document_store
+from db.database import document_store
+
 
 from services.ai_service import call_ai_full, ai_error_to_http_exception
 
