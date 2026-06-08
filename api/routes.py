@@ -1,21 +1,12 @@
 from fastapi import APIRouter
 
 from api.routes.upload_routes import router as upload_router
-from api.import router as ask_router
-from api.quiz_routes import router as quiz_router
-from api.summary_routes import router as summary_router
-
+from api.routes.question_routes import router as ask_router
+from api.routes.quiz_routes import router as quiz_router
+from api.routes.summarize_routes import router as summary_router
 
 api_router = APIRouter(
     prefix="/api",
-    responses={
-        404: {
-            "description": "Requested API resource was not found."
-        },
-        500: {
-            "description": "Internal server error."
-        },
-    },
 )
 
 

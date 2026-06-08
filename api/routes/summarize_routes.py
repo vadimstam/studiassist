@@ -1,7 +1,15 @@
-from fastapi import HTTPException
+from fastapi import HTTPException, APIRouter
 
 
-from backend import document_store, call_ai_full
+from backend import document_store
+
+from services.ai_service import call_ai_full, ai_error_to_http_exception
+
+
+
+router = APIRouter(
+    tags=["Document Upload"],
+)
 
 
 
@@ -24,5 +32,5 @@ def summarize(session_id: str, subject: str = "", level: str = "Undergraduate"):
     except HTTPException:
         raise
     except Exception as e:
-        raise _ai_error_to_http(e)
+        raise ai_error_to_http_exception(e)
     return {"summary": summary, "filename": doc["filename"]}

@@ -11,10 +11,6 @@ from backend import document_store
 
 router = APIRouter(
     tags=["Document Upload"],
-    responses={
-        400: {"description": "Invalid file type, empty file, or no file uploaded."},
-        500: {"description": "Failed to process uploaded lecture slides."},
-    },
 )
 
 
